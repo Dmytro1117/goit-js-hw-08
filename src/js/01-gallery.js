@@ -5,16 +5,22 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 const shortid = require('shortid');
 // Change code below this line
 
+
+
+
 console.log(shortid.generate());
 
-console.log(galleryItems);
 
+
+
+
+console.log(galleryItems);
 
 const containerEl = document.querySelector(".gallery");
 const markupEl = createGallery(galleryItems);
 containerEl.insertAdjacentHTML("beforeend", markupEl);
 containerEl.addEventListener("click", onContainer);
-let instance;
+// let instance;
 function createGallery(images) {
   return galleryItems.map(({preview, original, description}) => {
     return `
