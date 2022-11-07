@@ -10,8 +10,6 @@ savedTextInput()
 savedEmailInput()
 
 
-
-
 formEl.addEventListener('submit', handleForm);
 emailEl.addEventListener('input', _.throttle(handleEmailInput, 500));
 // emailEl.addEventListener('input', throttle(handleEmailInput, 500));
@@ -57,16 +55,12 @@ function savedEmailInput() {
 
 
 
-
 const objec = {}
 console.log(objec)
 
 formEl.addEventListener('input', e => {
-    const rrr = e.target.value;
-    localStorage.setItem(TEXT, message);
-    const objec = JSON.parse(json);
-
     objec[e.target.name] = e.target.value
-    console.log(objec)
-   
+    const yyy = JSON.parse(objec);
+    localStorage.setItem(ccc, yyy);
+
 });
