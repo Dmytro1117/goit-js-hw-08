@@ -1,20 +1,17 @@
 // Add imports above this line
-import { galleryItems } from './gallery-items';
+import { galleryItems } from './gallery-items.js';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 // Change code below this line
 
 
-const shortid = require('shortid');
+// const shortid = require('shortid');
 
-console.log(shortid.generate());
-
-
+// console.log(shortid.generate());
 
 
-
-console.log(galleryItems);
+// console.log(galleryItems);
 
 const containerEl = document.querySelector(".gallery");
 const markupEl = createGallery(galleryItems);
@@ -25,7 +22,7 @@ function createGallery(images) {
   return galleryItems.map(({preview, original, description}) => {
     return `
     <div class="gallery__item">
-        <a class="gallery__link" href="large-image.jpg">
+        <a class="gallery__link" href="${original}">
             <img
             class="gallery__image"
             src="${preview}"
@@ -37,9 +34,7 @@ function createGallery(images) {
     `;
   }).join("");
   
-}
-
-function onContainer(e) {
+} function onContainer(e) {
      e.preventDefault();
     const isGalery = e.target.classList.contains("gallery");
     
@@ -47,16 +42,6 @@ function onContainer(e) {
         return;
     }
 
-  // const largeImage = e.target.dataset.source;
-  // instance = basicLightbox.create(`
-	// 	<img width="1400" height="900" src="${largeImage}">
-	// `)
-  // instance.show()
-  //   console.log(largeImage);
 }
 
-//  document.addEventListener("keydown", e => {
-//    if (e.code === "Escape") {
-//      instance.close()
-//       }
-//     })
+let lightbox = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250} );
