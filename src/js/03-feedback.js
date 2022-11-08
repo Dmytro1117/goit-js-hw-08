@@ -46,10 +46,15 @@ function savDataFromLocSt() {
   
   // console.log(savedMesss)
   
-    if (savedMesss) {
+    if (savedMesss.email) {
         emailEl.value = savedMesss.email
+        // textEl.value = savedMesss.message
+  } 
+  if (savedMesss.message) {
+        // emailEl.value = savedMesss.email
         textEl.value = savedMesss.message
     } 
+
 
 }
 
